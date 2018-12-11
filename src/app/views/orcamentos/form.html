@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-8">
+            <h2 class="title">{{vm.title}}</h2>
+            <form>
+                <div>
+                    <select class="form-control" name="selectCliente" ng-model="vm.clientes" class="form-control p-0">
+                        <option ng-repeat="cliente in vm.clientes" ng-selected="false">{{cliente.nome}}</option>
+                    </select>
+                </div>
+                <table>
+                    <tr class="list-group" ng-repeat="produto in vm.produtos track by $index">
+                        <select placeholder="Selecione um produto" class="form-control" name="selectProduto" ng-model="produto"
+                            class="form-control p-0">
+                            <option ng-repeat="prod in vm.produtosCadastrados" ng-selected="false">{{prod.descricao}}</option>
+                        </select>
+                        <input class="form-control" ng-model="produto.quantidadeProduto" type="number" placeholder="Quantidade"></ui-input>
+                    </tr>
+                </table>
+
+                <button ng-click="vm.addProd()" type="button" class="btn btn-success">Add produto</button>
+                <button ng-click="vm.save()" type="button" class="btn btn-primary btn-lg">Salvar Registro</button>
+                <a ui-sref="app.orcamento.list" class="btn btn-danger">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

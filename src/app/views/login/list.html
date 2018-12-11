@@ -1,0 +1,18 @@
+<div class="login-body container-fluid">
+    <div class="row justify-content-end">
+        <div class="container-fluid mt-2">
+            <h3 class="text-light"><i class="icon feather icon-crosshair"></i> Marble</h3>
+        </div>
+        <div class="login container-fluid mt-5 ">
+            <form class="form-signin">
+                <h1 class="h1 mb-3 font-weight-normal text-dark">Entrar</h1>
+                <label for="usuario" class="sr-only">Usuário</label>
+                <input ng-model="vm.usuario.usuario" type="text" id="usuario" class="form-control mb-2" placeholder="Usuário" required autofocus>
+                <label for="senha" class="sr-only">Senha</label>
+                <input ng-model="vm.usuario.senha" type="password" id="senha" class="form-control" placeholder="Senha" required>
+                <button class="btn btn-lg btn-primary btn-block" ng-click="vm.login()">Entrar</button>
+                <a ui-sref="registro"> Me cadastrar</a>
+            </form>
+        </div>
+    </div>
+</div>
