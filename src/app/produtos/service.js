@@ -1,4 +1,4 @@
-export default class ProdutoService {
+export default class ProdutosService {
 
     constructor($http, BASE_URL) {
         this.$http = $http;
@@ -31,4 +31,4 @@ export default class ProdutoService {
 
 }
 
-ProdutoService.$inject = ['$http', 'BASE_URL'];
+ProdutosService.$inject = ['$http', 'BASE_URL'];

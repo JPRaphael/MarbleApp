@@ -1,20 +1,10 @@
 export default class ListController {
 
-    constructor(ProdutoService) {
-        this.cols = [{
-            label: 'Código',
-            value: 'codigo'
-        },{
-            label: 'Descrição',
-            value: 'descricao'
-        },{
-            label: 'Preço',
-            value: 'preco'
-        }];
-
+    constructor(ProdutosService) {
+        
         this.records = [];
 
-        ProdutoService.getAll()
+        ProdutosService.getAll()
             .then(records => {
                 this.records = records;
             }).catch(erro => {
@@ -22,9 +12,9 @@ export default class ListController {
             });
 
         this.excluir = function(id){
-            ProdutoService.remove(id);
+            ProdutosService.remove(id)
         }
     }
 }
 
-ListController.$inject = ['ProdutoService']
+ListController.$inject = ['ProdutosService']

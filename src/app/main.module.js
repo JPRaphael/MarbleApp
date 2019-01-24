@@ -4,10 +4,7 @@ import { default as uiRouter } from '@uirouter/angularjs';
 import diretivas from './diretivas';
 
 import { mainConfig } from './main/config';
-import { clienteConfig } from './clientes/config';
-import { produtoConfig } from './produtos/config';
-import { estoqueConfig } from './estoque/config';
-import { orcamentoConfig } from './orcamentos/config';
+import { produtosConfig } from './produtos/config';
 import { loginConfig } from './login/config';
 
 const modulo = angular
@@ -15,13 +12,10 @@ const modulo = angular
 
 export default modulo
     .config(mainConfig)
-    .config(clienteConfig(modulo))
-    .config(produtoConfig(modulo))
-    .config(estoqueConfig(modulo))
-    .config(orcamentoConfig(modulo))
+    .config(produtosConfig(modulo))
     .config(loginConfig(modulo))
     .constant('BASE_URL', 'http://localhost:8090/api')
     .config(require('./providersConfig'))
-    .service('marble.ContextoService', require('./context.service'))
-    .service('marble.NotificationService', require('./notification.service'))
+    .service('listthings.ContextoService', require('./context.service'))
+    .service('listthings.NotificationService', require('./notification.service'))
     .name;

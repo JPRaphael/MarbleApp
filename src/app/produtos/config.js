@@ -1,32 +1,32 @@
 import ListController from './list.controller'
 import FormController from './form.controller'
-import ProdutoService from './service';
+import ProdutosService from './service';
 
-export const produtoConfig = (modulo) => {
-  modulo.service('ProdutoService', ProdutoService);
+export const produtosConfig = (modulo) => {
+  modulo.service('ProdutosService', ProdutosService);
   return ['$stateProvider', config];
 };
 
 function config ($stateProvider) {
   $stateProvider
-    .state('app.produto', {
+    .state('app.produtos', {
       template: require('@views/default.html'),
       url: 'produtos',
-      redirectTo: 'app.produto.list'
+      redirectTo: 'app.produtos.list'
     })
-    .state('app.produto.list', {
+    .state('app.produtos.list', {
       template: require('@views/produtos/list.html'),
       url: '/list',
       controller: ListController,
       controllerAs: 'vm'
     })
-    .state('app.produto.new', {
+    .state('app.produtos.new', {
       template: require('@views/produtos/form.html'),
       url: '/new',
       controller: FormController,
       controllerAs: 'vm'
     })
-    .state('app.produto.edit', {
+    .state('app.produtos.edit', {
       template: require('@views/produtos/form.html'),
       url: '/{id}',
       controller: FormController,

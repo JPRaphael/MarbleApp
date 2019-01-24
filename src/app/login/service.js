@@ -12,7 +12,7 @@ export default class LoginService {
             .then(response => {
                 this.ContextoService.setUsuario(response.data.usuario);
                 this.ContextoService.setToken(response.data.token);
-                this.$state.go('app.dashboard');
+                this.$state.go('app.produtos');
             })
             .catch(console.log);
     }
@@ -23,4 +23,4 @@ export default class LoginService {
     }
 }
 
-LoginService.$inject = ['$http', 'BASE_URL', 'marble.ContextoService', '$state'];
+LoginService.$inject = ['$http', 'BASE_URL', 'listthings.ContextoService', '$state'];

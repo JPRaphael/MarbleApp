@@ -3,7 +3,7 @@ const path = require('path');
 // plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');;
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 exports.config = {
   entry: {

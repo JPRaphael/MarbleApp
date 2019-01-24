@@ -1,7 +1,7 @@
 export default class FormController {
 
-    constructor(ProdutoService, $stateParams, $state) {
-        this.service = ProdutoService;
+    constructor(ProdutosService, $stateParams, $state) {
+        this.service = ProdutosService;
         this.$state = $state;
         if ($stateParams.id) {
             this.service.getOne($stateParams.id)
@@ -14,13 +14,13 @@ export default class FormController {
     save() {
         this.service.save(this.record)
             .then(() => {
-                this.$state.go('app.produto.list')
+                this.$state.go('app.produtos.list')
             }).catch(console.error);
     }
 }
 
 FormController.$inject = [
-    'ProdutoService', 
+    'ProdutosService', 
     '$stateParams',
     '$state'
 ];
